@@ -12,13 +12,12 @@ export class UserService {
 
     getAll() {
         
-let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      }) 
-    };
-        
+        let httpOptions = {
+            headers: new HttpHeaders({
+            'Content-Type': 'application/json'
+        }) 
+        };
 
-    return this.http.get<User[]>('http://127.0.0.1:8000/api/get-details',  httpOptions);
-    }
+            return this.http.get<User[]>('http://127.0.0.1:8000/api/get-details',  httpOptions);
+        }
 }
