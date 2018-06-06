@@ -7,13 +7,18 @@ import { map } from 'rxjs/operators';
 export class AuthenticationService {
     constructor(private http: HttpClient) { }
 
-    login(username: string, password: string) {
-        return this.http.post<any>('/api/authenticate', { username: username, password: password })
+    login(email: string, password: string) {
+        return this.http.post<any>('http://127.0.0.1:8000/api/login?email=' +
+                          email + '&password=' +
+                          password, JSON.stringify({ email: email, password : password }))
             .pipe(map((res:any) => {
                 // login successful if there's a jwt token in the response
+            
+             console.log(res)
                 if (res && res.token) {
+               
                     // store username and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify({ username, token: res.token }));
+                    localStorage.setItem('currentUser', JSON.stringify({ email:email, token: res.token }));
                 }
             }));
     }
