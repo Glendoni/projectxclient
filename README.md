@@ -1,5 +1,3 @@
-# angular-6-jwt-authentication-example
+# Anger 6 project X Client
 
-Angular 6 JWT Authentication Example with Webpack 4
-
-To see a demo and further details go to http://jasonwatmore.com/post/2018/05/23/angular-6-jwt-authentication-example-tutorial
+ With webpack 4 and token 
